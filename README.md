@@ -42,5 +42,14 @@ npm run dev
 
 ## Деплой
 
-Пуш в `main` → GitHub Actions собирает статику и выкладывает на GitHub Pages (`.github/workflows/deploy.yml`).
-Для своего домена: добавьте файл `public/CNAME` с доменом и уберите `NEXT_PUBLIC_BASE_PATH` из workflow.
+```bash
+npm run deploy
+```
+
+Скрипт `scripts/deploy.mjs` собирает статику с `NEXT_PUBLIC_BASE_PATH=/ekb-evakuator` и публикует `out/` в ветку `gh-pages`,
+откуда её раздаёт GitHub Pages.
+
+Вариант через GitHub Actions лежит в `deploy-workflow.example.yml` — перенесите его в `.github/workflows/deploy.yml`
+(нужен токен со scope `workflow`: `gh auth refresh -h github.com -s workflow`).
+
+Для своего домена: добавьте файл `public/CNAME` с доменом и запускайте деплой с `REPO_NAME=` пустым (basePath `/`).
