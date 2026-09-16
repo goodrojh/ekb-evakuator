@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ЕКБ-Эвакуатор — сайт
 
-## Getting Started
+Лендинг службы эвакуации в Екатеринбурге. Next.js 16 (App Router, static export), Tailwind v4, framer-motion, lucide-react.
 
-First, run the development server:
+**Демо:** https://goodrojh.github.io/ekb-evakuator/
+
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Сборка статики: `npm run build` → папка `out/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Где что менять
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Что | Где |
+|---|---|
+| Телефон, Telegram, MAX, WhatsApp | `lib/site.ts` → `site` |
+| Цены, включённые километры, доплаты | `lib/site.ts` → `vehicleTypes`, `pricing` |
+| Ситуации на карточках | `lib/site.ts` → `situations` |
+| Районы выезда | `lib/site.ts` → `districts` |
+| Отзывы | `components/Reviews.tsx` (сейчас — примеры, замените на реальные) |
+| Вопросы-ответы | `components/FAQ.tsx` |
+| Фото автопарка | `public/fleet/` + подписи в `components/Fleet.tsx` |
+| Палитра и шрифты | `app/globals.css`, `app/layout.tsx` |
 
-## Learn More
+## Куда приходят заявки
 
-To learn more about Next.js, take a look at the following resources:
+Все кнопки «Вызвать / Перезвоните мне» открывают одну модальную форму (`components/LeadModal.tsx`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Без настройки:** заявка сохраняется в `localStorage` браузера посетителя и в консоль — это только для теста.
+- **Рабочий вариант:** укажите endpoint, принимающий JSON POST, в переменной `NEXT_PUBLIC_LEAD_ENDPOINT`
+  (например, форма на [Formspree](https://formspree.io) или свой бот). В GitHub: *Settings → Secrets and variables → Actions → Variables*, затем добавьте в workflow `env`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Пример JSON заявки:
 
-## Deploy on Vercel
+```json
+{ "name": "Иван", "phone": "+7 900 123-45-67", "situation": "ДТП", "place": "ул. Белинского, 100", "vehicle": "", "note": "", "source": "hero", "time": "16.09.2026, 16:05" }
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Деплой
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Пуш в `main` → GitHub Actions собирает статику и выкладывает на GitHub Pages (`.github/workflows/deploy.yml`).
+Для своего домена: добавьте файл `public/CNAME` с доменом и уберите `NEXT_PUBLIC_BASE_PATH` из workflow.
