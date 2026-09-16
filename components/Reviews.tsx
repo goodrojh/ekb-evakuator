@@ -32,9 +32,6 @@ export default function Reviews() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-amber-deep mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber-deep" /> Отзывы
-            </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-[1.05]">
               Что говорят те,
               <br />

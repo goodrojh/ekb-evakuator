@@ -28,9 +28,6 @@ export default function HowItWorks() {
         transition={{ duration: 0.7 }}
         className="max-w-6xl mx-auto mb-14 md:mb-20 relative z-10"
       >
-        <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-amber-deep mb-4">
-          <span className="w-2 h-2 rounded-full bg-amber-deep" /> Как это работает
-        </span>
         <h2 className="font-display text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.05] max-w-3xl">
           От звонка до доставки —<br />
           <span className="text-muted">три шага и один таймер.</span>

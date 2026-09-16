@@ -91,9 +91,9 @@ export default function Hero() {
           >
             <a
               href={site.phoneHref}
-              className="group rounded-full pl-6 pr-7 py-4 text-[17px] font-bold bg-amber text-ink flex items-center justify-center gap-3 hover:bg-amber-deep transition-all hover:scale-[1.03] active:scale-95 shadow-[0_12px_50px_rgba(255,176,32,0.35)]"
+              className="group relative rounded-full px-14 py-4 text-[17px] font-bold bg-amber text-ink flex items-center justify-center hover:bg-amber-deep transition-all hover:scale-[1.03] active:scale-95 shadow-[0_12px_50px_rgba(255,176,32,0.35)]"
             >
-              <span className="w-9 h-9 rounded-full bg-ink/10 flex items-center justify-center">
+              <span className="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-ink/10 flex items-center justify-center">
                 <Phone className="h-4.5 w-4.5" />
               </span>
               {site.phoneDisplay}
@@ -124,8 +124,8 @@ export default function Hero() {
                 className="rounded-2xl bg-white/6 backdrop-blur-md border border-white/10 px-4 py-3.5 flex flex-col gap-1"
               >
                 <div className="flex items-center gap-2">
-                  <s.icon className="h-4 w-4 text-amber" />
-                  <span className="font-display font-bold text-[15px] md:text-lg whitespace-nowrap">{s.big}</span>
+                  <s.icon className="h-4 w-4 text-amber hidden sm:block shrink-0" />
+                  <span className="font-display font-bold text-[14px] md:text-lg leading-tight">{s.big}</span>
                 </div>
                 <span className="text-[12px] text-white/60 leading-snug">{s.small}</span>
               </div>

@@ -110,9 +110,6 @@ export default function FAQ() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="max-w-[820px] mx-auto">
         <div className="text-center mb-10">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-amber mb-4">
-            <span className="w-2 h-2 rounded-full bg-amber" /> Вопросы
-          </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold leading-[1.05] mb-3">Всё, что обычно спрашивают по телефону</h2>
           <p className="text-white/60 text-base">Чтобы вы знали ответы ещё до звонка.</p>
         </div>

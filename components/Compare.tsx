@@ -47,9 +47,6 @@ export default function Compare() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-4">
-            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-amber mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber" /> Честное сравнение
-            </span>
             <h2 className="font-display text-[32px] md:text-5xl lg:text-4xl xl:text-5xl font-bold leading-[1.05]">
               Чем мы отличаемся
               <br />

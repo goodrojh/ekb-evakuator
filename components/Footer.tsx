@@ -93,7 +93,7 @@ export default function Footer() {
             <div className="col-span-2 md:w-[34%]">
               <Logo />
               <p className="mt-3 text-white/60 text-[13px] leading-relaxed max-w-[280px]">
-                Круглосуточный эвакуатор в Екатеринбурге и Свердловской области. Свой автопарк, {site.yearsExperience} лет опыта, честная цена.
+                Круглосуточный эвакуатор в Екатеринбурге и Свердловской области. Своя машина, {site.yearsExperience} лет за рулём, честная цена.
               </p>
             </div>
             <div>
@@ -114,7 +114,7 @@ export default function Footer() {
                 {[
                   ["Цены", "#prices"],
                   ["Как работаем", "#how"],
-                  ["Автопарк", "#fleet"],
+                  ["Машина", "#fleet"],
                   ["Вопросы", "#faq"],
                 ].map(([l, h]) => (
                   <li key={h}>

@@ -10,7 +10,7 @@ const links = [
   { label: "Ситуации", href: "#situations" },
   { label: "Цены", href: "#prices" },
   { label: "Как работаем", href: "#how" },
-  { label: "Автопарк", href: "#fleet" },
+  { label: "Машина", href: "#fleet" },
   { label: "Вопросы", href: "#faq" },
 ];
 

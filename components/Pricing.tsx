@@ -36,9 +36,6 @@ export default function Pricing() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Левая колонка — прайс */}
           <div className="lg:col-span-6">
-            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-amber mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber" /> Цены без сюрпризов
-            </span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
